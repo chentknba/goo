@@ -1,0 +1,15 @@
+syntax="proto3";
+
+package helloworld;
+
+service HelloWorld {
+    rpc Hello(stream Request) returns (stream Response) {}
+}
+
+message Request {
+    bytes payload = 1;
+}
+
+message Response {
+    bytes payload = 1;
+}
