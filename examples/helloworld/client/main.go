@@ -72,7 +72,7 @@ func runClient(addr string) {
 
     // send
     go func() {
-        tick := time.Tick(time.Millisecond)
+        tick := time.Tick(10*time.Millisecond)
         for _ = range(tick) {
             req := jsonRequest{"func1", "damn"}
 
