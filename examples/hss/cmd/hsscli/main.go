@@ -25,6 +25,8 @@ func runClient() {
 
     client := pb.NewHssClient(conn)
 
+	waitc := make(chan struct{})
+
     stream, err := client.Serve(context.Background())
     if err != nil {
         log.Fatalf("%v.Serve(_) = _, %v",client, err)
@@ -41,11 +43,14 @@ func runClient() {
                 log.Fatalf("failed to send msg: %v", err)
             }
         }
+
+		waitc <- struct{}{}
     }()
+
+	<-waitc
 }
 
 func main(){
     runClient()
 
-    select{}
 }

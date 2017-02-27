@@ -5,6 +5,8 @@ import (
 
     "io"
 
+	"log"
+
     "goo/examples/hss/pb"
     grpctransport "goo/transport/grpc"
 )
