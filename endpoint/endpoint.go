@@ -4,4 +4,4 @@ import (
 	"context"
 )
 
-type func(ctx context.Context, request interface{}) (interface{}, error)
+type Endpoint func(ctx context.Context, request interface{}) error
