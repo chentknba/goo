@@ -13,7 +13,6 @@ type Service interface {
 type baseService struct {}
 
 func (s baseService) Serve(ctx context.Context, request []byte) error {
-    // handle the request
     log.Printf("recv: %s", string(request))
     return nil
 }

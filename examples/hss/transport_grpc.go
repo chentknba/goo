@@ -29,6 +29,7 @@ func (s *grpcServer) Serve(stream pb.Hss_ServeServer) error {
         }
 
         if err != nil {
+            log.Printf("recv error, %v\n", err)
             return err
         }
 

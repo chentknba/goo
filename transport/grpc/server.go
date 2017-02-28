@@ -25,5 +25,4 @@ func NewServer(
 
 func (s *Server)ServeGRPC(ctx context.Context, request interface{}) error {
     return s.e(ctx, request)
-    //return nil
 }

@@ -9,7 +9,3 @@ service Hss {
 message Request {
     bytes payload = 1;
 }
-
-message Response {
-    bytes payload = 1;
-}
